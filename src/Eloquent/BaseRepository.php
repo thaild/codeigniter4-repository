@@ -121,9 +121,9 @@ abstract class BaseRepository extends RepositoryAbstract implements RepositoryIn
     /**
      * @inheritdoc
      */
-    public function destroy($id)
+    public function destroy($id = null, bool $purge = false)
     {
-        $results = $this->entity->delete($id);
+        $results = $this->entity->delete($id, $purge);
 
         $this->reset();
 
